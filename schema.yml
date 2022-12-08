@@ -1,0 +1,34 @@
+title: PeopleSoft Image
+description: Build a PeopleSoft Image
+schemaVersion: 1.1.0
+version: "20190304"
+groupings:
+  - title: "My Oracle Support Information"
+    variables:     
+      - ${mos_username}
+      - ${mos_password}
+      - ${patch_id}
+      - ${display_name}
+      - ${compartment_ocid}
+      - ${ad}
+
+variables:
+  mos_username:
+    type: string
+    required: true
+  mos_password:
+    type: mos_password
+    required: true
+  patch_id:
+    type: integer
+    required: true
+  display_name:
+    type: string
+    required: true
+  ad:
+    type: oci:identity:availabilitydomain:name
+    title: Availability Domain
+    description: Availability Domain for the Cloud Manager instance.
+    required: true 
+    dependsOn:
+      compartmentId: ${compartment_ocid}
