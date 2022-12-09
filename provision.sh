@@ -1,8 +1,8 @@
 #!/bin/bash
 
-export MOS_USERNAME=$1
-export MOS_PASSWORD=$2
-export PATCH_ID=$3
+export MOS_USERNAME="${1:?MOS Username not set}"
+export MOS_PASSWORD="${2:?MOS Password not set}"
+export PATCH_ID="${3:?Patch ID not set}"
 
 sudo yum install -y git
 
